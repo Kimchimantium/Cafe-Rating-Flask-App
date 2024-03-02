@@ -28,3 +28,4 @@ This Flask application allows users to submit information about different cafes,
 
    ```bash
    pip install Flask Flask-WTF Flask-Bootstrap
+# Cafe-Rating-Flask-App
