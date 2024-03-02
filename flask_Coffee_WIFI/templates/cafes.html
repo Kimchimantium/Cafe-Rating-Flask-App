@@ -1,0 +1,41 @@
+{% extends 'bootstrap/base.html' %}
+{% include 'header.html' %}
+{% block title %}Restaurants{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid bg-dark">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1 class="text-light">All Cafes</h1>
+
+	  <table class="table table-dark">
+         <thead>
+          <tr>
+              {% for n in cafes[0] %}
+                <th scope="col">{{n}}</th>
+                {% endfor %}
+          </thead>
+          <tbody>
+            {% for n in cafes[1::] %}
+            <tr>
+                <th scope="row">{{ n[0] }}</th>
+                <td><a class="text-warning" href="{{ n[1] }}">Maps Link</a></td>
+                {% for k in n[2::] %}
+                    <td>{{ k }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+          </tbody>
+  	  </table>
+
+      <p><a class="text-warning" href="/">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+</body>
